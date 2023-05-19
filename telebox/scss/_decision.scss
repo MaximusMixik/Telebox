@@ -1,0 +1,114 @@
+.page {
+  &__decision {
+    padding-top: rem(30);
+    padding-bottom: rem(100);
+
+    @media (max-width: em(767.98)) {
+      padding-top: rem(100);
+      padding-bottom: rem(50);
+    }
+    &_home {
+      padding-top: rem(70);
+      padding-bottom: rem(70);
+      @media (max-width: em(767.98)) {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+      }
+      .decision__body {
+        margin-bottom: rem(50);
+      }
+    }
+  }
+}
+.decision {
+  // &__container {
+
+  // }
+
+  // &__title {}
+
+  &__categories {
+    display: flex;
+    justify-content: center;
+    gap: rem(10);
+    margin-bottom: rem(40);
+  }
+
+  // &__body { }
+  &__link {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: 1.39;
+    color: #006dff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(8);
+    &::after {
+      content: "";
+      flex: 0 0 rem(10);
+      width: rem(10);
+      height: rem(12);
+      background: url(../img/svg/arrow.svg) center no-repeat;
+      transition: transform 400ms ease;
+    }
+    @media (any-hover: hover) {
+      &:hover::after {
+        transform: translateX(rem(5));
+      }
+    }
+  }
+}
+.decision-categories {
+  // &__button {
+  // }
+  &__item {
+    font-weight: 500;
+    line-height: 1.19;
+    display: inline-block;
+    color: #808080;
+    padding: rem(10) rem(24);
+    border-bottom: rem(1) solid #808080;
+  }
+  &__item.active {
+    color: #3e97ed;
+    border-bottom: rem(1) solid #3e97ed;
+  }
+}
+.decision-body {
+  &__items {
+    display: none;
+
+    &.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+      gap: rem(30);
+    }
+  }
+  &__item {
+    display: flex;
+    gap: rem(16);
+  }
+
+  &__image {
+    max-width: 100%;
+    text-align: center;
+    transition: transform 300ms ease;
+  }
+
+  &__name {
+    font-weight: 700;
+    line-height: 1.39;
+    margin-bottom: rem(5);
+    transition: color 300ms ease;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $colorBlue;
+      }
+    }
+  }
+
+  &__text {
+    font-size: rem(16);
+  }
+}

@@ -1,0 +1,74 @@
+.page {
+  &__blog {
+    padding-top: rem(30);
+    padding-bottom: rem(70);
+    @media (max-width: em(767.98)) {
+      padding-top: rem(100);
+
+      padding-bottom: rem(50);
+    }
+    &_home {
+      padding-top: 0;
+      padding-bottom: rem(70);
+    }
+    @media (max-width: em(767.98)) {
+      padding-bottom: rem(50);
+    }
+  }
+}
+.blog {
+  // &__container {}
+
+  // &__title {}
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(290), 1fr));
+
+    gap: rem(30);
+  }
+}
+.blog-body {
+  &__column {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: rem(20);
+  }
+
+  &__img {
+    display: block;
+    @include img(57.142857%, 12);
+    @include img-animate;
+  }
+
+  &__text {
+    font-weight: 500;
+    transition: color 400ms ease;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $colorBlue;
+      }
+    }
+  }
+
+  &__link {
+    font-size: rem(16);
+    color: #006dff;
+    display: flex;
+    align-items: center;
+    gap: rem(7);
+    &::after {
+      content: "";
+      flex: 0 0 rem(16);
+      width: rem(16);
+      height: rem(16);
+      transition: transform 400ms ease;
+      background: url(../img/svg/arrow.svg) center no-repeat;
+    }
+    @media (any-hover: hover) {
+      &:hover::after {
+        transform: translateX(rem(5));
+      }
+    }
+  }
+}
