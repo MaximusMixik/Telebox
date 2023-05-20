@@ -1,0 +1,128 @@
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+// ! button
+
+%main-button {
+	font-weight: 500;
+	font-size: rem(14);
+	line-height: 1.5;
+	min-height: rem(49);
+	padding: rem(12) rem(8);
+	width: 100%;
+	display: block;
+	text-align: center;
+	transition: all 500ms ease-out;
+}
+@mixin button($bgColor: $colorBlue, $borderColor: $colorGray, $textColor: $colorWhite, $maxWidth: rem(142)) {
+	color: $textColor;
+	background-color: $bgColor;
+	border: 1px solid $borderColor;
+	max-width: $maxWidth;
+	@extend %main-button;
+
+	@media (max-width: em(447.98)) {
+		max-width: rem(120);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $colorWhite;
+			color: $colorBlue;
+		}
+	}
+}
+// ! text decoration underline
+%underline-center {
+	transition: color 400ms ease;
+	position: relative;
+	&::before {
+		position: absolute;
+		content: "";
+		width: 0;
+		height: rem(1);
+		bottom: 0;
+		left: 50%;
+		// background-color: $colorBlack;
+		transition: width 400ms ease, left 400ms ease;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			// color: $colorBlack;
+			&:hover::before {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+}
+@mixin underline-center($bgColor: $colorBlack, $textColor: $colorBlack) {
+	@extend %underline-center;
+	&::before {
+		background-color: $bgColor;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: $textColor;
+		}
+	}
+}
+
+// !grid
+%grid {
+	display: grid;
+}
+
+@mixin grid($min: 290, $max: 1fr, $c-gap: 10, $r-gap: 10) {
+	@extend %grid;
+	grid-template-columns: repeat(auto-fit, minmax(rem($min), $max));
+	gap: rem($r-gap) rem($c-gap);
+}
+// !flex
+// %flex
+// @mixin
+
+// !adaptive image
+%img {
+	position: relative;
+	& img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+@mixin img($paddingBottom: 50%, $borderRadius: 5, $objectFit: cover) {
+	@extend %img;
+
+	padding-bottom: $paddingBottom;
+	border-radius: rem($borderRadius);
+	& img {
+		object-fit: $objectFit;
+		// object-position: ;
+	}
+}
+
+%img-animate {
+	overflow: hidden;
+	& img {
+		transition: transform 400ms ease;
+	}
+}
+@mixin img-animate($scale: 1.05) {
+	@extend %img-animate;
+	@media (any-hover: hover) {
+		&:hover img {
+			transform: scale($scale);
+		}
+	}
+}

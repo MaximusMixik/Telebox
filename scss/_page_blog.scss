@@ -1,0 +1,145 @@
+.page {
+  &__article {
+    padding-top: rem(30);
+    padding-bottom: rem(70);
+
+    @media (max-width: em(767.98)) {
+      padding-top: rem(100);
+      padding-bottom: rem(50);
+    }
+  }
+}
+
+.article {
+  &__container {
+    // max-width: rem(882);
+    line-height: 1.5;
+    .title {
+      text-align: left;
+      @media (max-width: em(767.98)) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__content {
+    margin-bottom: rem(70);
+    @media (max-width: em(767)) {
+      margin-bottom: rem(35);
+    }
+  }
+
+  &__body {
+    & > :last-child .title {
+      margin-bottom: rem(8);
+    }
+  }
+}
+.article-content {
+  // &__sub-title {}
+  &__sub-list,
+  &__list {
+    & > :not(:last-child) {
+      margin-bottom: rem(8);
+    }
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+    @media (max-width: em(447.98)) {
+      & > :not(:last-child) {
+        margin-bottom: rem(4);
+      }
+      &:not(:last-child) {
+        margin-bottom: rem(4);
+      }
+    }
+  }
+
+  // &__item { }
+
+  // &__link {}
+
+  &__sub-list {
+    padding-left: rem(55);
+    @media (max-width: em(767.98)) {
+      padding-left: rem(30);
+    }
+    @media (max-width: em(447.98)) {
+      padding-left: rem(15);
+    }
+  }
+}
+
+.article-body {
+  &__wrapper {
+    &:not(:last-child) {
+      padding-bottom: rem(70);
+      @media (max-width: em(767.98)) {
+        padding-bottom: rem(50);
+      }
+    }
+  }
+
+  // &__title {}
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__link {
+    &_mark {
+      color: $colorBlue;
+      text-decoration: underline;
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // &__sub-title {}
+
+  &__list {
+    & > :not(:last-child) {
+      margin-bottom: rem(4);
+    }
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__image {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+    & > :not(:last-child) {
+      margin-bottom: rem(8);
+    }
+    & img {
+      max-width: 100%;
+    }
+  }
+
+  // &__image-description {}
+
+  &__sub-text {
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+    // & > :not(:last-child) {
+    //   margin-bottom: rem(4);
+    // }
+  }
+}
+
+.article-body-list {
+  &__item {
+    & > :not(:last-child) {
+      margin-bottom: rem(4);
+    }
+  }
+}
