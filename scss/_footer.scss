@@ -77,6 +77,9 @@
     line-height: 1.28;
     color: #747474;
     transition: color 400ms ease;
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+    }
 
     &.active {
       pointer-events: none;
@@ -126,7 +129,7 @@
     }
     @media (max-width: em(500.98)) {
       & > :not(:last-child) {
-        margin-bottom: rem(20);
+        margin-bottom: rem(33);
       }
     }
   }
@@ -141,6 +144,11 @@
     @media (min-width: em(991)) {
       &:nth-child(1) {
         justify-self: center;
+      }
+    }
+    @media (max-width: em(447.98)) {
+      & > :not(:last-child) {
+        margin-bottom: rem(5);
       }
     }
   }
@@ -185,6 +193,9 @@
 
   &__link {
     @include underline-center($colorWhite, $colorWhite);
+    @media (max-width: em(447.98)) {
+      font-size: rem(15);
+    }
   }
 }
 .out-row {

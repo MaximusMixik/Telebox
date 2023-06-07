@@ -262,12 +262,18 @@
       background-color: #d9d9d9;
       border-radius: rem(30);
       width: rem(8);
+      @media (max-width: em(447.98)) {
+        width: rem(4);
+      }
     }
     &::-webkit-scrollbar-thumb {
       background-color: $colorBlue;
 
       border-radius: rem(30);
       width: rem(8);
+      @media (max-width: em(447.98)) {
+        width: rem(4);
+      }
     }
   }
 
@@ -277,9 +283,9 @@
     margin-bottom: rem(16);
   }
 
-  &__text {
-  }
-  &__sub-title sub-title {
+  // &__text {}
+
+  &__sub-title {
     font-weight: 600;
     font-size: rem(16);
   }

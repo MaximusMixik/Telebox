@@ -69,6 +69,13 @@
     color: #808080;
     padding: rem(10) rem(24);
     border-bottom: rem(1) solid #808080;
+    @media (max-width: em(500)) {
+      font-size: rem(16);
+      padding: rem(10);
+    }
+    @media (max-width: em(400)) {
+      padding: rem(8) rem(2);
+    }
   }
   &__item.active {
     color: #3e97ed;
